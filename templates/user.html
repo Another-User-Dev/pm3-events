@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Events</title>
+</head>
+<body>
+    {% for person in user %}
+        {{ person.booked_events}}<br>
+        {{ person.email_addr}}<br>
+        {{ person.first_name}}<br>
+        {{ person.newsletter}}<br>
+        {{ person.surname}}<br>
+    {% endfor %}
+    
+</body>
+</html>
