@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Events</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending the base template!</h2>
+
     {% for person in user %}
         {{ person.booked_events}}<br>
         {{ person.email_addr}}<br>
@@ -13,6 +10,5 @@
         {{ person.newsletter}}<br>
         {{ person.surname}}<br>
     {% endfor %}
-    
-</body>
-</html>
+
+{% endblock %}
