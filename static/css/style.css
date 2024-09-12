@@ -1,3 +1,4 @@
-body {
-    background-color: blue
+.nav-link, .navbar-brand {
+    color: white !important;
 }
+

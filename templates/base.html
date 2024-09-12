@@ -16,8 +16,42 @@
     <title>Community Events</title> 
 </head>
 <body>
-
-    <h2><i class="fab fa-youtube-square"></i></h2>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid my-3 mx-3">
+              <a class="navbar-brand" href="{{ url_for('get_user') }}">Community Events</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('get_user') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Add events</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Log Out</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Log In</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Admin</a>
+                  </li>                        
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>    
 
     {% block content %}
     {% endblock %}
