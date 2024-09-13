@@ -7,3 +7,7 @@ body {
     color: white !important;
 }
 
+.flashes h4 {
+    line-height: 2;
+}
+
