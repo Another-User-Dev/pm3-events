@@ -4,19 +4,20 @@
    
     <container>
         <br>
-        <h5 class="text-center">Register</h5>
-        <br> 
-        <!-- Registration form--> 
-        <form class="row justify-content-center" method="POST" action="{{ url_for('register') }}" >
+        <h5 class="text-center">Log In</h5>
+        <br>
+        <!-- Log in form-->
+        
+        <form class="row justify-content-center" method="POST" action="{{ url_for('login') }}" >
             <div class="card col_xs-12 col-lg-4 bg-success text-white" >                
                 <br>
-                <div class="mb-3"><h6>Please register with an username and password</h6></div>
+                <div class="mb-3"><h6>Please log in with an username and password</h6></div>
                     <!-- Username field -->
                     <div class="mb-3">
-                        <i class="fas fa-user-plus"></i>
+                        <i class="fas fa-user-cog"></i>
                         <label for="username" class="form-label">Username</label>
                         <input type="text" name="username" class="form-control" id="username" 
-                          minlength="5" maxlength="15" pattern="[a-zA-Z0-9]{5,15}$" placeholder="Username" required>
+                        minlength="5" maxlength="15" pattern="[a-zA-Z0-9]{5,15}$" placeholder="Username" required>
                     </div>
                     <!-- Password field -->
                     <div class="mb-3">
@@ -26,17 +27,18 @@
                         minlength="5" maxlength="15" pattern="[a-zA-Z0-9]{5,15}$" placeholder="Password" required>
                     </div>
                 <div>
-                    <!-- Register button-->                      
+                    <!-- Log In button-->                      
                     <button type="submit" class="btn btn-primary col-12 mb-3">
-                      Register <i class="fas fa-sign-in-alt"></i></button>
+                    Log In <i class="fas fa-sign-in-alt"></i></button>
                 </div>
             </div>
         </form>
         
+        
         <div class="row">
             <p class="text-center">
-                Already Registered?
-                <a href="{{ url_for('login') }}">Log In</a>
+                New here?
+                <a href="{{ url_for('register') }}" >Register Account</a>
             </p>
         </div>
     </container>
