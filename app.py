@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_user")
 def get_user():
-    users = mongo.db.user.find()
+    users = mongo.db.users.find()
     return render_template("user.html", users = users)
 
 
@@ -90,12 +90,17 @@ def profile(username):
     return render_template("profile.html", username=username) 
 
 
-@app.route("/logout")
+@app.route("/logout", methods=["GET","POST"])
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+@app.route("/create_event")
+def create_event():
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("create_event.html", categories=categories)
 
 
 if __name__ == "__main__":

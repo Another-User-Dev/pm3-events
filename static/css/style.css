@@ -3,9 +3,13 @@ body {
     padding: 0;
 }
 
+/* override navbar font colours to help with accessibility (contrast colours) */
+
 .nav-link, .navbar-brand {
     color: white !important;
 }
+
+/* Styling for flash message */
 
 .flashes h4 {
     line-height: 2;

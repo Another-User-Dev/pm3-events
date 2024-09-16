@@ -27,27 +27,27 @@
 
                   <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav ms-auto">
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url_for('get_user') }}">Home</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#">Add events</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#">Admin</a>
-                          </li>                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('get_user') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('create_event') }}">Create Event</a>
+                            </li>                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Admin</a>
+                            </li>                        
                       </ul>
                   </div>
               </div>
