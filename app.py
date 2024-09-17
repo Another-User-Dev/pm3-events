@@ -97,8 +97,22 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-@app.route("/create_event")
+@app.route("/create_event", methods=["GET", "POST"])
 def create_event():
+    if request.method == "POST":
+        event = {
+            "event_title": request.form.get("event_title"),
+            "event_description": request.form.get("event_description"),
+            "event_location": request.form.get("event_location"),            
+            "event_type": request.form.getlist("event_type")[0],            
+            "event_date": request.form.get("event_date"),            
+            "start_time": request.form.get("start_time"),
+            "created_by": session["user"] 
+        }
+        mongo.db.events.insert_one(event)
+        flash("Event Successfully Added")
+        return redirect(url_for("profile", username=session["user"]))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_event.html", categories=categories)
 
