@@ -4,14 +4,14 @@
    
     <container>
         <br>
-        <h5 class="text-center">Create Event</h5>
+        <h5 class="text-center">Manage Event</h5>
         <br>
         <!-- Create event form-->
         
-        <form class="row justify-content-center" method="POST" action="{{ url_for('create_event') }}" >
-            <div class="card col_xs-12 col-lg-4 bg-success text-white" >                
+        <form class="row justify-content-center" method="POST" action="{{ url_for('edit_event') }}" >
+            <div class="card col-xs-12 col-lg-4 bg-success text-white" >                
                 <br>
-                <div class="mb-3"><h6>Create your event by filling in the form</h6></div>
+                <div class="mb-3"><h6>Manage your event with this form</h6></div>
 
                     <!-- Title field -->
                     <div class="mb-3">
@@ -24,7 +24,7 @@
                     <!-- Event description field -->
 
                     <div class="mb-3">
-                        <i class="fas fa-user-lock"></i>
+                        <i class="fas fa-info-circle"></i>
                         <label for="event_description" class="form-label">Event description</label>
                         <textarea class="form-control" id="event_description" rows="3"
                         name="event_description" placeholder="Describe your event here" 
@@ -35,7 +35,7 @@
                     <!-- Location description field -->
 
                     <div class="mb-3">
-                        <i class="fas fa-user-lock"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                         <label for="event_location" class="form-label">Event Location</label>
                         <textarea class="form-control" id="event_location" placeholder="Describe your location here" 
                             rows="3" name="event_location"  
@@ -46,10 +46,15 @@
                     <!-- Event type drop down menu -->
 
                     <div class="mb-3">
+                        <i class="fab fa-meetup"></i>
                         <select class="form-select form-select-sm mb3" name="event_type" id="event_type" value="">
                             <option  disabled selected>Select Event Type</option>
                             {% for category in categories %}
-                                <option value="{{ category.event_type }}">"{{ category.event_type }}"</option> 
+                                {% if category = category.event %}
+                                    <option value="{{ category.event_type }}" selected>{{ category.event_type }}</option>
+                                {% else %}
+                                    <option value="{{ category.event_type }}">"{{ category.event_type }}"</option>
+                                {% endif %} 
                             {% endfor %}                    
                         </select>
                     </div>
@@ -57,7 +62,7 @@
                     <!-- Date field -->
 
                     <div class="mb-3">
-                        <i class="fas fa-user-lock"></i>
+                        <i class="fas fa-calendar-alt"></i>
                         <label>Enter your event date: </label>
                         <input type="date" name="event_date" class="form-control" required>                    
                     </div>
@@ -65,16 +70,21 @@
                     <!-- Time field -->
 
                     <div class="mb-3">
-                        <i class="fas fa-user-lock"></i>
+                        <i class="fas fa-clock"></i>
                         <label for="start_time">Choose an appointment time: </label>
                         <input id="start_time" type="time" name="start_time" step="300" value="13:30"  class="form-control" required>
-                    </div>             
-                    
-                    <div>
-                    <!-- Summit button-->                      
-                    <button type="submit" class="btn btn-primary col-12 mb-3">
-                    Create Event <i class="fas fa-sign-in-alt"></i></button>
+                    </div>                  
+                                      
+                    <div> 
+                        <!-- Cancel button-->
+                        <a href="{{ url_for('edit_event') }}"                                    
+                        type="submit" class="btn btn-primary btn-lg mb-3">
+                        Cancel<i class="fas fa-sign-in-alt"></i></button>
+                        <!-- Cancel button-->                      
+                        <button type="submit" class="btn btn-primary btn-lg mb-3">
+                        Edit Event <i class="fas fa-sign-in-alt"></i></button>
                     </div>
+                </div>
             </div>
         </form>        
     </container>
