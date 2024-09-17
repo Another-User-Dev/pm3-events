@@ -83,11 +83,13 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    events = mongo.db.events.find(
+        {"created_by": username.lower()})
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, events=events)
 
-    return render_template("profile.html", username=username) 
+    return render_template("profile.html", username=username, events=events) 
 
 
 @app.route("/logout", methods=["GET","POST"])

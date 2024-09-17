@@ -31,7 +31,7 @@
                                 <a class="nav-link" href="{{ url_for('get_user') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                                <a class="nav-link" href="{{ url_for('profile', username=session['user'], events=events) }}">Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url_for('create_event') }}">Create Event</a>
