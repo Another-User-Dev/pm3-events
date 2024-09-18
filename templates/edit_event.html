@@ -6,9 +6,10 @@
         <br>
         <h5 class="text-center">Manage Event</h5>
         <br>
+
         <!-- Create event form-->
         
-        <form class="row justify-content-center" method="POST" action="{{ url_for('edit_event') }}" >
+        <form class="row justify-content-center" method="POST" action="{{ url_for('edit_event'), event_id=event._id }}" >
             <div class="card col-xs-12 col-lg-4 bg-success text-white" >                
                 <br>
                 <div class="mb-3"><h6>Manage your event with this form</h6></div>
@@ -77,7 +78,7 @@
                                       
                     <div> 
                         <!-- Cancel button-->
-                        <a href="{{ url_for('edit_event') }}"                                    
+                        <a href="{{ url_for('get_user') }}"                                    
                         type="submit" class="btn btn-primary btn-lg mb-3">
                         Cancel<i class="fas fa-sign-in-alt"></i></button>
                         <!-- Cancel button-->                      
