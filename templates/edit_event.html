@@ -9,7 +9,7 @@
 
         <!-- Create event form-->
         
-        <form class="row justify-content-center" method="POST" action="{{ url_for('edit_event'), event_id=event._id }}" >
+        <form class="row justify-content-center" method="POST" action="{{ url_for('edit_event', event_id=event._id) }}" >
             <div class="card col-xs-12 col-lg-4 bg-success text-white" >                
                 <br>
                 <div class="mb-3"><h6>Manage your event with this form</h6></div>
@@ -51,12 +51,12 @@
                         <select class="form-select form-select-sm mb3" name="event_type" id="event_type" value="">
                             <option  disabled selected>Select Event Type</option>
                             {% for category in categories %}
-                                {% if category = category.event %}
+                                {% if category == category.event_type %}
                                     <option value="{{ category.event_type }}" selected>{{ category.event_type }}</option>
                                 {% else %}
                                     <option value="{{ category.event_type }}">"{{ category.event_type }}"</option>
                                 {% endif %} 
-                            {% endfor %}                    
+                            {% endfor %}               
                         </select>
                     </div>
 
