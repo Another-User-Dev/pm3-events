@@ -24,6 +24,12 @@
                     <p><i class="fas fa-map-marker-alt"></i> {{ event.event_location }}</p>
                     <p><i class="fas fa-calendar-alt"></i> {{ event.event_date }}</p>                 
                     <p><i class="fas fa-clock"></i> {{ event.start_time }}</p>
+                    
+                    <!-- create buttons-->
+
+                    <a href="{{ url_for('edit_event', event_Id=event._Id) }}"                                    
+                        class="btn btn-primary btn-lg mb-3">
+                        Edit<i class="fas fa-sign-in-alt"></i></a>
                 </div>  
             </div>
         {% endfor %}  
