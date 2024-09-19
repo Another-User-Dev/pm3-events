@@ -7,7 +7,7 @@
     <br>    
 
     <div class="row justify-content-center">
-        <div class="card col-xs-12 col-lg-4 bg-success text-white">                
+        <div class="card col-lg-4 bg-success text-white">                
             <br>
             <p>{{ username }}'s Profile</p><br>                 
         </div>
@@ -19,11 +19,12 @@
         {% for event in events %}
             <div class="card col-lg-4 bg-success text-white mb-3 mx-2 my-2">                
                 <div class="card-body">  
-                    <p><i class="fas fa-user-cog"></i> {{ event.event_title }}</p>                  
-                    <p><i class="fas fa-info-circle"></i> {{ event.event_description }}</p>  
-                    <p><i class="fas fa-map-marker-alt"></i> {{ event.event_location }}</p>
-                    <p><i class="fas fa-calendar-alt"></i> {{ event.event_date }}</p>                 
-                    <p><i class="fas fa-clock"></i> {{ event.start_time }}</p>
+                    <p>Title<i class="fas fa-user-cog"></i> {{ event.event_title }}</p>                  
+                    <p>Description<i class="fas fa-info-circle"></i> {{ event.event_description }}</p>                  
+                    <p>Type<i class="fas fa-info-circle"></i> {{ event.event_type }}</p>
+                    <p>Location<i class="fas fa-map-marker-alt"></i> {{ event.event_location }}</p>
+                    <p>Date<i class="fas fa-calendar-alt"></i> {{ event.event_date }}</p>                 
+                    <p>Time<i class="fas fa-clock"></i> {{ event.start_time }}</p>
                     
                     <!-- create buttons-->
                     
