@@ -138,6 +138,10 @@ def edit_event(event_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_event.html", event=event, categories=categories)
 
+@app.route("/delete_event/<event_id>")
+def delete_event(event_id):
+    return redirect(url_for("profile"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
